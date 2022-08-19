@@ -6,10 +6,6 @@ const jwt = require("jsonwebtoken")
 const validateRegisterInput = require("../validation/registerValidation")
 const requiresAuth = require("../middleware/permissions");
 
-router.get("/test", (req, res) => {
-    res.send("Auth route working")
-})
-
 router.post("/register", async (req, res) => {
     try {
         const {errors, isValid} = validateRegisterInput(req.body)
