@@ -6,30 +6,30 @@ const validateRegisterInput = (data) => {
 
     // check the email field
     if (isEmpty(data.email)) {
-        errors.email = "Email field can not be empty";
+        errors.email = "بخش ایمیل نباید خالی باشد";
     } else if (!Validator.isEmail(data.email)) {
-        errors.email = "Email is invalid, please provide a valid email";
+        errors.email = "ایمیل نامعتبر است";
     }
 
     // check password field
     if (isEmpty(data.password)) {
-        errors.password = "Password field can not be empty";
+        errors.password = "بخش رمز نباید خالی باشد";
     } else if (!Validator.isLength(data.password, { min: 6, max: 150 })) {
-        errors.password = "Password must be between 6 and 150 characters long";
+        errors.password = "رمز عبور مناسب انتخاب کنید";
     }
 
     // check name field
     if (isEmpty(data.name)) {
-        errors.name = "Name field can not be empty";
+        errors.name = "بخش نام نباید خالی باشد";
     } else if (!Validator.isLength(data.name, { min: 2, max: 30 })) {
-        errors.name = "Name must be between 2 and 30 characters long";
+        errors.name = "نام مناسب انتخاب کنید";
     }
 
     // check confirm password field
     if (isEmpty(data.confirmPassword)) {
-        errors.confirmPassword = "Confirm Password field can not be empty";
+        errors.confirmPassword = "بخش تایید رمز نباید خالی باشد";
     } else if (!Validator.equals(data.password, data.confirmPassword)) {
-        errors.confirmPassword = "Password and Confirm Password fields must match";
+        errors.confirmPassword = "رمز عبور با رمز عبور وارد شده همخوانی ندارد";
     }
 
     return {

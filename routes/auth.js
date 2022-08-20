@@ -77,7 +77,7 @@ router.post("/login", async (req, res) => {
         if (!user) {
             return res
                 .status(400)
-                .json({ error: "There was a problem with your login credentials" });
+                .json({ error: "خطا هنگام ورود" });
         }
 
         const passwordMatch = await bcrypt.compare(
@@ -88,7 +88,7 @@ router.post("/login", async (req, res) => {
         if (!passwordMatch) {
             return res
                 .status(400)
-                .json({ error: "There was a problem with your login credentials" });
+                .json({ error: "خطا هنگام ورود" });
         }
 
         const payload = { userId: user._id };
